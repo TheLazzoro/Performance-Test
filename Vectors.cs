@@ -32,18 +32,18 @@ public static class Vectors
     public static void Run()
     {
         // Warmup phase
-        IncreaseAge_Class();
-        IncreaseAge_Struct();
+        Vector_Loop_Class();
+        Vector_Loop_Struct();
 
         // Benchmark
-        TimeSpan oop = IncreaseAge_Class();
-        TimeSpan dod = IncreaseAge_Struct();
+        TimeSpan oop = Vector_Loop_Class();
+        TimeSpan dod = Vector_Loop_Struct();
 
         Console.WriteLine("Vectors Class:  1.000x");
         Console.WriteLine("Vectors Struct: " + $"{(oop / dod).ToString("0.000")}x");
     }
 
-    static TimeSpan IncreaseAge_Class()
+    static TimeSpan Vector_Loop_Class()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -56,7 +56,7 @@ public static class Vectors
         return stopwatch.Elapsed;
     }
 
-    static TimeSpan IncreaseAge_Struct()
+    static TimeSpan Vector_Loop_Struct()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
