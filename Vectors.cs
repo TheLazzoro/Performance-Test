@@ -28,23 +28,22 @@ struct Vector_Struct
 public static class Vectors
 {
     private static uint iterations = 1000000;
-    private static string char_name = "Lazzoro";
 
     public static void Run()
     {
         // Warmup phase
-        IncreaseAge_OOP();
-        IncreaseAge_DOD();
+        IncreaseAge_Class();
+        IncreaseAge_Struct();
 
         // Benchmark
-        TimeSpan oop = IncreaseAge_OOP();
-        TimeSpan dod = IncreaseAge_DOD();
+        TimeSpan oop = IncreaseAge_Class();
+        TimeSpan dod = IncreaseAge_Struct();
 
-        Console.WriteLine("Vectors OOP: 1.000x");
-        Console.WriteLine("Vectors DOD: " + $"{(oop / dod).ToString("0.000")}x");
+        Console.WriteLine("Vectors Class:  1.000x");
+        Console.WriteLine("Vectors Struct: " + $"{(oop / dod).ToString("0.000")}x");
     }
 
-    static TimeSpan IncreaseAge_OOP()
+    static TimeSpan IncreaseAge_Class()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -57,7 +56,7 @@ public static class Vectors
         return stopwatch.Elapsed;
     }
 
-    static TimeSpan IncreaseAge_DOD()
+    static TimeSpan IncreaseAge_Struct()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
