@@ -9,6 +9,7 @@
             Persons.Run();
             Vectors.Run();
             MemoryTest.Run();
+            ExceptionTest.Run();
         }
     }
 }
