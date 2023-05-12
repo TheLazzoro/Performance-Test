@@ -36,11 +36,11 @@ public static class Vectors
         Vector_Loop_Struct();
 
         // Benchmark
-        TimeSpan oop = Vector_Loop_Class();
-        TimeSpan dod = Vector_Loop_Struct();
+        TimeSpan vec_class = Vector_Loop_Class();
+        TimeSpan vec_struct = Vector_Loop_Struct();
 
         Console.WriteLine("Vectors Class:  1.000x");
-        Console.WriteLine("Vectors Struct: " + $"{(oop / dod).ToString("0.000")}x");
+        Console.WriteLine("Vectors Struct: " + $"{(vec_class / vec_struct).ToString("0.000")}x");
     }
 
     static TimeSpan Vector_Loop_Class()
