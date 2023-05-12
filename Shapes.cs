@@ -176,9 +176,9 @@ public static class Shapes
         Console.WriteLine("TotalAreaVTBL:     " + "1,000x   " + time0);
         Console.WriteLine("TotalAreaVTBL:     " + $"{(time0 / time1).ToString("0.000")}x   " + time1);
         Console.WriteLine("TotalAreaSwitch:   " + $"{(time0 / time2).ToString("0.000")}x   " + time2);
-        Console.WriteLine("TotalAreaSwitch:   " + $"{(time0 / time3).ToString("0.000")}x   " + time2);
-        Console.WriteLine("TotalAreaUnion:    " + $"{(time0 / time4).ToString("0.000")}x   " + time3);
-        Console.WriteLine("TotalAreaUnion:    " + $"{(time0 / time5).ToString("0.000")}x   " + time3);
+        Console.WriteLine("TotalAreaSwitch:   " + $"{(time0 / time3).ToString("0.000")}x   " + time3);
+        Console.WriteLine("TotalAreaUnion:    " + $"{(time0 / time4).ToString("0.000")}x   " + time4);
+        Console.WriteLine("TotalAreaUnion:    " + $"{(time0 / time5).ToString("0.000")}x   " + time5);
 
     }
 
