@@ -7,9 +7,10 @@
         {
             Shapes.Run();
             Persons.Run();
-            Vectors.Run();
+            Allocations.Run();
             MemoryTest.Run();
             ExceptionTest.Run();
+            MathTest.Run();
         }
     }
 }

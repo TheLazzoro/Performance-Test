@@ -25,7 +25,7 @@ struct Vector_Struct
     }
 }
 
-public static class Vectors
+public static class Allocations
 {
     private static uint iterations = 1000000;
 
@@ -39,8 +39,8 @@ public static class Vectors
         TimeSpan vec_class = Vector_Loop_Class();
         TimeSpan vec_struct = Vector_Loop_Struct();
 
-        Console.WriteLine("Vectors Class:  1.000x");
-        Console.WriteLine("Vectors Struct: " + $"{(vec_class / vec_struct).ToString("0.000")}x");
+        Console.WriteLine("Allocation Class:  1.000x");
+        Console.WriteLine("Allocation Struct: " + $"{(vec_class / vec_struct).ToString("0.000")}x");
     }
 
     static TimeSpan Vector_Loop_Class()
