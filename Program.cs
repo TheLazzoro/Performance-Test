@@ -8,6 +8,7 @@
             Shapes.Run();
             Persons.Run();
             Allocations.Run();
+            Loops.Run();
             MemoryTest.Run();
             ExceptionTest.Run();
             MathTest.Run();

@@ -27,7 +27,7 @@ struct Vector_Struct
 
 public static class Allocations
 {
-    private static uint iterations = 1000000;
+    private static uint iterations = 1_000_000;
 
     public static void Run()
     {
