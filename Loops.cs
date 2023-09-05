@@ -38,15 +38,18 @@ struct loop_struct
 }
 
 
-public static class Loops
+public class Loops : TestBaseClass
 {
-    static int count = 1_000_000;
+    int count = 1_000_000;
 
-    static loop_class[] vec_classes = new loop_class[count];
-    static loop_struct[] vec_structs = new loop_struct[count];
+    loop_class[] vec_classes;
+    loop_struct[] vec_structs;
 
-    public static void Run()
+    public void Run()
     {
+        vec_classes = new loop_class[count];
+        vec_structs = new loop_struct[count];
+
         // Populate
         for (int i = 0; i < count; i++)
         {
@@ -66,7 +69,7 @@ public static class Loops
         Console.WriteLine("Loop Structs:  " + $"{(time_classes / time_structs).ToString("0.000")}x");
     }
 
-    static TimeSpan Loop_Class()
+    TimeSpan Loop_Class()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -81,7 +84,7 @@ public static class Loops
         return stopwatch.Elapsed;
     }
 
-    static TimeSpan Loop_Struct()
+    TimeSpan Loop_Struct()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();

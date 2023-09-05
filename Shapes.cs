@@ -82,9 +82,9 @@ struct shape_union
 }
 
 
-public static class Shapes
+public class Shapes : TestBaseClass
 {
-    public static void Run()
+    public void Run()
     {
         shape_base[] shapes = new shape_base[1048576];
         Random rand = new Random();
@@ -187,7 +187,7 @@ public static class Shapes
     /// 
 
 
-    static float TotalAreaVTBL(int ShapeCount, shape_base[] Shapes)
+    float TotalAreaVTBL(int ShapeCount, shape_base[] Shapes)
     {
         float Accum = 0.0f;
         for (int i = 0; i < ShapeCount; i++)
@@ -202,7 +202,7 @@ public static class Shapes
     //
     // Compute 1
     //
-    static float GetAreaSwitch(shape_union Shape)
+    float GetAreaSwitch(shape_union Shape)
     {
         float Result = 0.0f;
 
@@ -229,7 +229,7 @@ public static class Shapes
         return Result;
     }
 
-    static float TotalAreaSwitch(int ShapeCount, Span<shape_union> Shapes)
+    float TotalAreaSwitch(int ShapeCount, Span<shape_union> Shapes)
     {
         float Accum = 0.0f;
         for (int i = 0; i < ShapeCount; i++)
@@ -240,14 +240,14 @@ public static class Shapes
         return Accum;
     }
 
-    static readonly float[] CTable = { 1.0f, 1.0f, 0.5f, 3.14f };
-    static float GetAreaUnion(shape_union Shape)
+    readonly float[] CTable = { 1.0f, 1.0f, 0.5f, 3.14f };
+    float GetAreaUnion(shape_union Shape)
     {
         float Result = CTable[(int)Shape.Type] * Shape.Width * Shape.Height;
         return Result;
     }
 
-    static float TotalAreaUnion(int ShapeCount, Span<shape_union> Shapes)
+    float TotalAreaUnion(int ShapeCount, Span<shape_union> Shapes)
     {
         float Accum = 0.0f;
         for (int i = 0; i < ShapeCount; i++)

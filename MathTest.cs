@@ -1,15 +1,18 @@
 using System.Diagnostics;
 
 
-public static class MathTest
+public class MathTest : TestBaseClass
 {
-    private static uint iterations = 1_000_000;
-    private static Random rand = new Random();
-    private static float a = rand.Next();
-    private static float b = rand.Next();
+    private uint iterations = 1_000_000;
+    private Random rand = new Random();
+    private float a;
+    private float b;
 
-    public static void Run()
+    public void Run()
     {
+        a = rand.Next();
+        b = rand.Next();
+
         // Warmup
         Divide();
         Multiply();
@@ -21,7 +24,7 @@ public static class MathTest
         Console.WriteLine("Multiply:   " + $"{(divide / multiply).ToString("0.000")}x");
     }
 
-    private static TimeSpan Divide()
+    private TimeSpan Divide()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -33,7 +36,7 @@ public static class MathTest
         return stopwatch.Elapsed;
     }
 
-    private static TimeSpan Multiply()
+    private TimeSpan Multiply()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();

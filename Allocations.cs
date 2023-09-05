@@ -3,10 +3,10 @@ using System.Diagnostics;
 
 public class Vector_Class
 {
-    public uint x;
-    public uint y;
+    public int x;
+    public int y;
 
-    public Vector_Class(uint x, uint y)
+    public Vector_Class(int x, int y)
     {
         this.x = x;
         this.y = y;
@@ -15,21 +15,21 @@ public class Vector_Class
 
 struct Vector_Struct
 {
-    public uint x;
-    public uint y;
+    public int x;
+    public int y;
 
-    public Vector_Struct(uint x, uint y)
+    public Vector_Struct(int x, int y)
     {
         this.x = x;
         this.y = y;
     }
 }
 
-public static class Allocations
+public class Allocations : TestBaseClass
 {
-    private static uint iterations = 1_000_000;
+    private int iterations = 1_000_000;
 
-    public static void Run()
+    public void Run()
     {
         // Warmup phase
         Vector_Loop_Class();
@@ -43,12 +43,12 @@ public static class Allocations
         Console.WriteLine("Allocation Struct: " + $"{(vec_class / vec_struct).ToString("0.000")}x");
     }
 
-    static TimeSpan Vector_Loop_Class()
+    TimeSpan Vector_Loop_Class()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         var list = new Vector_Class[iterations];
-        for (uint i = 0; i < iterations; i++)
+        for (int i = 0; i < iterations; i++)
         {
             list[i] = new Vector_Class(i, i);
         }
@@ -56,12 +56,12 @@ public static class Allocations
         return stopwatch.Elapsed;
     }
 
-    static TimeSpan Vector_Loop_Struct()
+    TimeSpan Vector_Loop_Struct()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         var list = new Vector_Struct[iterations];
-        for (uint i = 0; i < iterations; i++)
+        for (int i = 0; i < iterations; i++)
         {
             list[i] = new Vector_Struct(i, i);
         }

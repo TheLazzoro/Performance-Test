@@ -20,9 +20,9 @@ struct Person_struct
     public uint[] height;
 }
 
-public static class Persons
+public class Persons : TestBaseClass
 {
-    public static void Run()
+    public void Run()
     {
         int person_count = 100000;
 
@@ -64,7 +64,7 @@ public static class Persons
         Console.WriteLine("Person DOD: " + $"{(oop / dod).ToString("0.000")}x");
     }
 
-    static TimeSpan IncreaseAge_OOP(List<Person> list)
+    TimeSpan IncreaseAge_OOP(List<Person> list)
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -76,7 +76,7 @@ public static class Persons
         return stopwatch.Elapsed;
     }
 
-    static TimeSpan IncreaseAge_DOD(Person_struct persons)
+    TimeSpan IncreaseAge_DOD(Person_struct persons)
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();

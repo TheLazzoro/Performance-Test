@@ -1,13 +1,13 @@
 using System;
 using System.Diagnostics;
 
-public static class ExceptionTest
+public class ExceptionTest : TestBaseClass
 {
-    private static string[] numbers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "X" };
-    private static uint iterations = 1_000_000;
-    private static Random rand = new();
+    private string[] numbers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "X" };
+    private uint iterations = 1_000_000;
+    private Random rand = new();
 
-    public static void Run()
+    public void Run()
     {
         // Warmup
         Parse_Test();
@@ -21,7 +21,7 @@ public static class ExceptionTest
         Console.WriteLine("TryParse: " + $"{(parse / tryParse).ToString("0.000")}x");
     }
 
-    private static TimeSpan Parse_Test()
+    private TimeSpan Parse_Test()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
@@ -41,8 +41,8 @@ public static class ExceptionTest
         return stopwatch.Elapsed;
     }
 
-    private static int test;
-    private static TimeSpan TryParse_Test()
+    private int test;
+    private TimeSpan TryParse_Test()
     {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();

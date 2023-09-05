@@ -5,13 +5,13 @@
 
         public static void Main(string[] args)
         {
-            Shapes.Run();
-            Persons.Run();
-            Allocations.Run();
-            Loops.Run();
-            MemoryTest.Run();
-            ExceptionTest.Run();
-            MathTest.Run();
+            new Shapes().Run();
+            new Persons().Run();
+            new Allocations().Run();
+            new Loops().Run();
+            new MemoryTest().Run();
+            new ExceptionTest().Run();
+            new MathTest().Run();
         }
     }
 }
