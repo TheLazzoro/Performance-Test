@@ -4,7 +4,7 @@ using System.Diagnostics;
 public class ExceptionTest : TestBaseClass
 {
     private string[] numbers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "X" };
-    private uint iterations = 1_000_000;
+    private uint iterations = 1_000;
     private Random rand = new();
 
     public void Run()

@@ -12,6 +12,7 @@
             new MemoryTest().Run();
             new ExceptionTest().Run();
             new MathTest().Run();
+            new ListHashset().Run();
         }
     }
 }
